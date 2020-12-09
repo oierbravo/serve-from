@@ -1,0 +1,21 @@
+{
+  "name": "serve-from",
+  "version": "0.0.1",
+  "description": "Proxy server.",
+  "repository": "https://github.com/oierbravo/serve-from",
+  "author": "Oier Bravo Urtasun <oierbravo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  },
+  "bin": {
+    "serve-from": "./bin/serve-from.js"
+  },
+  "files": [
+    "bin"
+  ]
+}

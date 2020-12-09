@@ -17,5 +17,10 @@
   },
   "files": [
     "bin"
+  ],
+  "keywords": [
+    "serve",
+    "http-server",
+    "proxy"
   ]
 }

@@ -5,10 +5,6 @@
 ![npm](https://img.shields.io/npm/v/serve-from.svg)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 
-```bash
-npm install -g serve-from
-``` 
-
 ## Usage
 The quickest way to get started is to just run `npx serve-from`.
 You can also install it globally.

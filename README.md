@@ -1,5 +1,5 @@
 # Serve From Commandline utility
-> Simple proxy server, usefull to bypass cors limitations in developmente environments.
+> Simple proxy server, usefull to bypass cors limitations in development environments.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/oierbravo/serve-from.svg?style=plastic)
 ![npm](https://img.shields.io/npm/v/serve-from.svg)

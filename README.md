@@ -24,7 +24,12 @@ serve-from -s example.com -p 9000
 serve-from -s example.com:7000 -p 9000
 ``` 
 ... will serve content from `https://example.com:7000` on `localhost:9000`
+```bash 
+serve-from -s example.com:7000 -p 9000 -h 127.0.0.1
+``` 
+... will serve content from `https://example.com:7000` on `127.0.0.1:9000`
 
 ### Options
 - `-s --source` (REQUIRED) Source server without protocol.
 - `-p --port` (OPTIONAL) Destination port.
+- `-h --host` (OPTIONAL) Destination host.

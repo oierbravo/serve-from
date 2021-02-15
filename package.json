@@ -1,11 +1,12 @@
 {
   "name": "serve-from",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Proxy server.",
   "repository": "https://github.com/oierbravo/serve-from",
   "author": "Oier Bravo Urtasun <oierbravo@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "commander": "^6.2.0",
     "cors": "^2.8.5",

@@ -1,6 +1,6 @@
 {
   "name": "serve-from",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Proxy server.",
   "repository": "https://github.com/oierbravo/serve-from",
   "author": "Oier Bravo Urtasun <oierbravo@gmail.com>",

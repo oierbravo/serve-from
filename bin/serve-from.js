@@ -34,10 +34,13 @@ if(debugType && debugType === 'headers'){
 }
 console.log('Source host: ' + chalk.yellow(sourceUrl));
 app.get('*', async (req, res) => {
-  if(debugType && debugType === 'headers'){
-    console.log(req.headers)
-  }
   const proxyUrl = `${sourceUrl}${req.path}`;
+  if(debugType && debugType === 'headers'){
+    console.log(`---<[ Debug for: ${chalk.bgRed.white(proxyUrl)} ]>---`)
+    console.log(req.headers)
+    console.log(`---<[ debugEnd ]>---`)
+  }
+  
   axios.get(proxyUrl, {params:req.query })
     .catch(function (error) {
       //console.log(error);

@@ -17,25 +17,39 @@ program.version(package.version);
 program.requiredOption('-s, --source <source>', 'Source server without protocol.')
 .option('-p, --port <port>', 'Output port. Defaults: 8080',8080)
 .option('-h, --host <host>', 'Output host. Defaults: localhost','localhost')
+.option('-d, --debug <type>', 'Output host. Defaults: false',false)
 .parse(process.argv);
 
 const source = program.source;
 const port = program.port;
 const host = program.host;
 
-const sourceUrl = `https://${source}`
+const debugType = program.debug
 
+
+const sourceUrl = `https://${source}`
+if(debugType && debugType === 'headers'){
+  //console.log('Debug ' + chalk.green('enabled: ') + chalk.yellow(debugType));
+  console.log(`Debug enabled: ${chalk.yellow(debugType)}`)
+}
 console.log('Source host: ' + chalk.yellow(sourceUrl));
 app.get('*', async (req, res) => {
-  axios.get(`${sourceUrl}${req.path}`, {params:req.query })
+  if(debugType && debugType === 'headers'){
+    console.log(req.headers)
+  }
+  const proxyUrl = `${sourceUrl}${req.path}`;
+  axios.get(proxyUrl, {params:req.query })
     .catch(function (error) {
-      console.log(error);
+      //console.log(error);
+      console.log(chalk.red(`Ups! something went wrong with: ${chalk.bgRed.white(proxyUrl)}`))
     })
     .then(function (response) {
-      res.status(response.request.res.statusCode).send(response.data);
+      if(response){
+        res.status(response.request.res.statusCode).send(response.data);
+
+      }
     })
 })
-  console.log(host);
   app.listen(port, host, () => {
     console.log('Listening on ' + chalk.green(`http://${host}:${port}`))
   })

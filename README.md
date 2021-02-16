@@ -28,8 +28,13 @@ serve-from -s example.com:7000 -p 9000
 serve-from -s example.com:7000 -p 9000 -h 127.0.0.1
 ``` 
 ... will serve content from `https://example.com:7000` on `127.0.0.1:9000`
+```bash 
+serve-from -s example.com:7000 -p 9000 -h 127.0.0.1
+``` 
+... will serve content from `https://example.com:7000` on `127.0.0.1:9000` printing source headers with `console.log`
 
 ### Options
 - `-s --source` (REQUIRED) Source server without protocol.
-- `-p --port` (OPTIONAL) Destination port.
-- `-h --host` (OPTIONAL) Destination host.
+- `-p --port` (OPTIONAL) Destination port, deafult: `8080`.
+- `-h --host` (OPTIONAL) Destination host, deafult: `localhost`.
+- `-d --debug headers` (OPTIONAL) Debug mode for headers, deafult: `false`. Prints the headers part from the source
